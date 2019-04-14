@@ -11,6 +11,13 @@ use Mix.Config
 # before starting your production server.
 config :arevel, ArevelWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
+  https: [
+    :inet6,
+    port: 4001,
+    cipher_suite: :strong,
+    keyfile: System.get_env("SOME_APP_SSL_KEY_PATH") || "priv/cert/selfsigned_key.pem",
+    certfile: System.get_env("SOME_APP_SSL_CERT_PATH") || "priv/cert/selfsigned.pem"
+  ],
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
