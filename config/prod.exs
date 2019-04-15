@@ -10,13 +10,18 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :arevel, ArevelWeb.Endpoint,
-  http: [:inet6, port: System.get_env("PORT") || 4000],
+  load_from_system_env: true,
+  check_origin: false,      # For app engine only!
+  root: ".",
+  server: true,
+  http: [:inet6, port: System.get_env("PORT") || 4000, compress: true],
   https: [
     :inet6,
     port: 4001,
     cipher_suite: :strong,
     keyfile: System.get_env("SOME_APP_SSL_KEY_PATH") || "priv/cert/selfsigned_key.pem",
-    certfile: System.get_env("SOME_APP_SSL_CERT_PATH") || "priv/cert/selfsigned.pem"
+    certfile: System.get_env("SOME_APP_SSL_CERT_PATH") || "priv/cert/selfsigned.pem",
+    compress: true
   ],
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
