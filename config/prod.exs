@@ -14,7 +14,12 @@ config :arevel, ArevelWeb.Endpoint,
   check_origin: false,      # For app engine only!
   root: ".",
   server: true,
-  http: [:inet6, port: System.get_env("PORT") || 9080, compress: true],
+  http: [
+    :inet6,
+    port: System.get_env("PORT") || 9080,
+#    compress: true,
+    protocol_options: [max_keepalive: 5_000_000]
+  ],
   https: [
     :inet6,
     port: 9081,
@@ -27,7 +32,8 @@ config :arevel, ArevelWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
-config :logger, level: :info
+# config :logger, level: :info
+config :logger, level: :warn
 
 # ## SSL Support
 #
