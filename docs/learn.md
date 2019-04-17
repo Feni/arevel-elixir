@@ -76,12 +76,12 @@ gcloud compute instances create arevel-instance \
     --image-family debian-9 \
     --image-project debian-cloud \
     --machine-type n1-standard-4 \
-    --boot-disk-type local-ssd \
+    --boot-disk-type pd-ssd \
     --boot-disk-size 10 \
     --scopes "userinfo-email,cloud-platform" \
     --metadata-from-file startup-script=bin/instance-startup.sh \
     --metadata release-url=gs://arevel-209217-releases/arevel-release \
-    --zone us-central1-f \
+    --zone us-central1-b \
     --tags http-server
 
 gcloud compute firewall-rules create default-allow-http-9080 \
@@ -109,45 +109,33 @@ sudo chown -R arevelapp app
 PORT=8080 ./arevel-release foreground to debug
 
 
-------
-Woot. Works now. I think. Needed to ssh in and verify why it wasn't running - seemed to be just cloudsql path, which kinda sucks that its a startup error. 
-I can't verify the https version yet, but let's run the same benchmark against the http version
+gcloud compute instances create arevel-instance \
+    --image-family debian-9 \
+    --image-project debian-cloud \
+    --machine-type n1-standard-4 \
+    --boot-disk-type pd-ssd \
+    --boot-disk-size 10 \
+    --scopes "userinfo-email,cloud-platform" \
+    --metadata-from-file startup-script=bin/instance-startup.sh \
+    --metadata release-url=gs://arevel-209217-releases/arevel-release \
+    --zone us-central1-b \
+    --tags http-server
 
-http://35.225.79.66:9080/
+
+gcloud compute instance-templates create arevel-template \
+    --image-family debian-9 \
+    --image-project debian-cloud \
+    --machine-type n1-standard-4 \
+    --boot-disk-type pd-ssd \
+    --boot-disk-size 10 \
+    --scopes "userinfo-email,cloud-platform" \
+    --metadata-from-file startup-script=bin/instance-startup.sh \
+    --metadata release-url=gs://arevel-209217-releases/arevel-release \
+    --tags http-server
 
 
-Started phase 0, duration: 1s @ 00:45:35(-0500) 2019-04-15
-Report @ 00:45:37(-0500) 2019-04-15
-Elapsed time: 2 seconds
-  Scenarios launched:  10
-  Scenarios completed: 10
-  Requests completed:  200
-  RPS sent: 106.95
-  Request latency:
-    min: 34.2
-    max: 95.3
-    median: 37.8
-    p95: 70.3
-    p99: 79.8
-  Codes:
-    200: 200
-
-All virtual users finished
-Summary report @ 00:45:37(-0500) 2019-04-15
-  Scenarios launched:  10
-  Scenarios completed: 10
-  Requests completed:  200
-  RPS sent: 106.38
-  Request latency:
-    min: 34.2
-    max: 95.3
-    median: 37.8
-    p95: 70.3
-    p99: 79.8
-  Scenario counts:
-    0: 10 (100%)
-  Codes:
-    200: 200
-
----------
-p99 is better, requests per second is better, min is slightly better (2ms). In the browser as well, this matches up with what I see - and it's about as good as you can expect with network latency. I am happy with this (vs the 50ms, which frankly is horribly slwo and unacceptable :P. Nah, I just like this config more. I have the freedom to own and manage the system any way I want). Builds and deploys are faster as well vs the flex environment setup. It's not that much more complex either after some initial work. 
+gcloud compute instance-groups managed create arevel-group \
+    --base-instance-name arevel-group \
+    --size 2 \
+    --template arevel-template \
+    --zone us-central1-b
