@@ -97,6 +97,29 @@ gcloud compute firewall-rules create default-allow-http-9081 \
     --target-tags http-server \
     --description "Allow https 9081 access to http-server"
 
+
+gcloud compute instance-groups managed set-named-ports arevel-group \
+    --named-ports http:9080 \
+    --zone us-central1-b
+
+gcloud compute instance-groups managed set-named-ports arevel-group \
+    --named-ports https:9081 \
+    --zone us-central1-b
+
+gcloud compute url-maps create arevel-service-map \
+    --default-service arevel-be
+
+
+gcloud compute target-http-proxies create arevel-service-proxy \
+    --url-map arevel-service-map
+
+
+gcloud compute forwarding-rules create arevel-http-rule \
+    --target-http-proxy arevel-service-proxy \
+    --ports 80 \
+    --global
+
+
 -
 TODO: Should set this to only allow it from lb.
 
