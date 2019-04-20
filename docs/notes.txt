@@ -1,0 +1,28 @@
+
+
+I do question whether this is the best approach or if it will be better to just do it the hard way. 
+This is my core value prop. This is central to my business. I should not shy away from the difficulty of implementation and just go through the initial pain of setting it up. The flexibilty it buys me later on is worth it. 
+Reference how it's done, but do it yourself. 
+Yes, I should implement it, but I don't have to do it right now. 
+First get things wired up so you can actually run code. 
+Then rip out the luerl bits for the other VM when necessary rather than up front. 
+
+
+
+April 20th, 2019
+There is eval functionality that could be leveraged for maximum speed of execution. 
+It won't have the same characteristics of execution as the underlying code though. 
+And there's no sandboxing to prevent it from having side-effects on the system. 
+
+I'm glad I looked into this. 
+There's https://github.com/rvirding/luerl by Virding which might provide some of the 
+sandboxed execution I need. 
+
+Ok. That might work. I have some basic representation which gets "compiled" down to lua code and then executed on the erlang vm. 
+
+So the data format is what the user sends us - the untrusted data. 
+The compilation has to happen on the backend so it can generate trusted code. 
+
+This is great! There is support for sandboxing. And it has hooks I can use to build in extra functionality, disable things selectively, set process prioritity, count execution reductions, etc. Awesome!
+
+The documentation for this library is nonexistant (or rather dense) and it's all kind of black magic, but I think it does what I need it to. Oh, and it's all in Erlang not in elixir. 
