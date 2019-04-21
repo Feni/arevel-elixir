@@ -1,4 +1,36 @@
+Alright. Enough theory. Time to write some code. 
+In the next 25 minutes, the goal is to extend the web server to just evaluates a hard-coded function of 1+1 and returns the result. Simple. 
+-------
 
+So for parser, there's the erlang built in parser and then NimbleParsec. The erlang leex and yacc seem more powerful but Nimble is seems simpler and faster for the limited use-case I have. 
+
+--------
+Did some thinking during Easter service. I think there's two versions of this. Arevel Script - which gives you the ability to write programs that take inputs and gives you an output. It doesn't care at all that it's happening as part of a web request - it just gives you some high level abstractions that enable you to get input (text, files, whatever) and spit out an output. 
+The results are saved so they can be returned when you visit that page again. Each execution generates a URL which can be saved and shared. 
+It all happens within an Arevel provided UI. 
+You get some minimal control over the output, but it's also very high level. 
+
+The secondary mode of operation is Arevel App. There the HTTP requests as well as websocket requests all just feed into the system as parameters and then you process it and return things. 
+
+I don't know if I've solved the push pull conflict entirely. 
+
+Using the Lua VM really doesn't give me that much more. I think it may be better to start with a lower level parser. 
+
+--------------
+I can also think of it as if there's really no parser layer in this format. The UI is a substitute for parser. 
+The only time parsers come into play is for inline expressions. 
+For those, you can use the trick liveview uses
+
+static: [
+    "(1 + "
+    ") / 2"
+], 
+dynamic: [
+    var1,
+]
+which get zipped together to form "(1 + var1) / 2"
+
+---------------
 
 I do question whether this is the best approach or if it will be better to just do it the hard way. 
 This is my core value prop. This is central to my business. I should not shy away from the difficulty of implementation and just go through the initial pain of setting it up. The flexibilty it buys me later on is worth it. 
@@ -7,6 +39,8 @@ Yes, I should implement it, but I don't have to do it right now.
 First get things wired up so you can actually run code. 
 Then rip out the luerl bits for the other VM when necessary rather than up front. 
 
+
+---------------
 
 
 April 20th, 2019

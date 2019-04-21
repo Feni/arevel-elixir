@@ -139,3 +139,8 @@ ping 34.66.97.108
 
 So it's basically all network delay at this point. The server itself is performing fine. 
 I don't know why the requests per second wasn't that high, but it'll do. 
+
+
+Server setup
+ulimit -n 200000
+Set min heap space to be a bit larger. Maybe between 1 and 6kb? 6 kb sounds nice and appropriate to me. Increases memory usage for concurrency, but limits cpu time spent on gc as it's pre-allocated to a larger size. Maybe let's compromize and set at 2/3 kb and let it grow. 
