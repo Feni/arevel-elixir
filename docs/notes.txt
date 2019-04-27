@@ -1,3 +1,14 @@
+April 27th
+Use `is` and `is not` rather than == and !=. The = sign has lost it's meaning with programmers. 
+Yes, this requires typing more but it will be easier to read and understand for new programmers. 
+
+To have inline function calls, write an expression and define temporary scoped variables under it which are accessible only in that expression evaluation, 
+So any function call is in that list. 
+
+Being able to call functions inline in an expression is useful. Atleast give the option of that for the experts. 
+
+
+-----------
 Alright. Enough theory. Time to write some code. 
 In the next 25 minutes, the goal is to extend the web server to just evaluates a hard-coded function of 1+1 and returns the result. Simple. 
 -------
