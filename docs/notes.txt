@@ -1,3 +1,51 @@
+This is a difficult decision to make with a lot of impact on the future architecture and workings of this system. I don't have all of the information to make the perfect decision. I can only do what is best immediately based on the more concrete requirements I have at the present. 
+I am going to go with having the parsing happen on the frontend. That will let me treat the frontend layer like it's a pure representation of code and have it be responsible for modifying that code. 
+The backend simply stores and executes the code. 
+That's a clean division. The division does mean having to have similar bits of code on the frontend and the backend. 
+Having the two systems line up perfectly. But you save computation on the backend. 
+And anyway the frontend does need to have some idea of the representation of code anyway in order for it to do its job of representing the code in the editor UI. 
+So really, there has to be a representation on both ends, the question is really on the transformation. 
+From code to representation and from representation modifications to code. 
+I don't fully know whether this live view thing is going to work out or not. That is so very very experimental and a bit premature as a technology. I shouldn't over-design around it.
+
+------------------------
+
+This is a good question to consider. I don't know why I didn't think of it up front. 
+What all should be done on the frontend vs the backend?
+Really, all the backend needs at the end of the day is the representation of the code it can execute. That's where my previous system didn't work well because all of the execution logic was in the browser as well, making it unsuitable for servers and backend APIs. 
+Now, does the backend need to know/care about parsing or not?
+Well, are there any disadvantages if we do parse it in the backend - other than complexity and effort? 
+Yes. The UI layer needs to know that information as well for it to work. 
+Well, why not just share that information with the UI layer then but still keep the backend the source of truth?
+
+Let me frame it another way. 
+Will the frontend need to be able to parse expressions without relying on the server?
+Will the server need to be able to parse expressions without relying on the client?
+
+At this point in time it's actually kind of unclear. 
+One point worth making is if there are raw types that behave differently between the parsing environment and the execution environment. 
+For example, native javascript doesn't support big numbers. Elixir does. But elixir and javascript both don't support 0.1 + 0.2 == 0.3
+
+
+----------------
+Why am I doing all of this parsing on the backend anyway? Why can't that be done on the frontend and passed back so the backend can just do evaluation? 
+The frontend transforms the code into a form that can be evaluated. Ideally, some kind of lisp structure.
+It has to do some of that anyway for the UI right? And if we want to do mapping from variable name users type in to an identifier - that's likely done at the UI layer. 
+The UI/frontend knows and manages the AST and the backend manages execution and state. 
+Does that mean I'm throwing away all of this work? Yep. Sometimes that's what you have to do to arrive at a good solution. 
+It wasn't all for naught - I've learned a few things along the way and gotten more familiar with Elixir. 
+I love the unit testing system in Elixir. It's quite nice. 
+-----------
+
+I'm learning a whole lot more about parsers than I ever cared to learn about this subject. Trying to implement this as a recursive descent parser with precedence climbing has been enjoyable when it's working and hell when it breaks. 
+It's pretty much unmaintainable in this form. I love the combinator part of it. I love that this is just elixir code. 
+I hate the deeply nested structure emmited by the parser and I hate how error prone and non-extensible the precedence system is. 
+
+Going to try to write this piece as a pratt parser. 
+Once I have all of this working, I am going to put this up as a library similar to jsep. 
+That way I am contributing back some open source work regardless of the success or failure of Arevel. 
+
+------------------------------
 April 27th
 Use `is` and `is not` rather than == and !=. The = sign has lost it's meaning with programmers. 
 Yes, this requires typing more but it will be easier to read and understand for new programmers. 
