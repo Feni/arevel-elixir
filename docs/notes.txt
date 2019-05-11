@@ -1,3 +1,15 @@
+May 11th
+Current mini goal - Frontend UI for entering an expression. Backend for evaluating it. 
+
+---------
+May 10th
+Took a break for some work stress the past week. I've arrive at a decision in the background. It's a clean separation to have the frontend deal with all of the parsing and transforming into a lisp format. 
+The backend then is purely responsible for taking the lisp style code, storing it and executing it. 
+If needed we can provide an API endpont to do the parsing for you, but it's really not needed. 
+
+
+----------------------------
+
 This is a difficult decision to make with a lot of impact on the future architecture and workings of this system. I don't have all of the information to make the perfect decision. I can only do what is best immediately based on the more concrete requirements I have at the present. 
 I am going to go with having the parsing happen on the frontend. That will let me treat the frontend layer like it's a pure representation of code and have it be responsible for modifying that code. 
 The backend simply stores and executes the code. 
