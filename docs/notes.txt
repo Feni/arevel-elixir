@@ -4,7 +4,9 @@ For the frontend framework, I'm going to use React this time rather than vue bas
 Yes, vue is great and I love it but react just has a significantly larger ecosystem and that is hard to ignore. 
 They're close enough on performance (file size, runtime) that it doesn't make sense to use the #2 based on personal taste. 
 I am also not going to bother with typescript this time. Just going to stick to pure javascript. 
-
+I just haven't found any significant benefit to it and it's yet another semi-niche tool to add to the toolchain that isn't necessary. 
+Only add things that are absolutely necessary to make things work. Choose the popular defaults - hard to go wrong with that. 
+If we need to we can adopt it later incrementally. 
 ----------
 
 May 11th
