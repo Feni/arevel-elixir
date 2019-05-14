@@ -1,3 +1,8 @@
+Alright. I got expression evaluation working for math and some basic boolean. 
+I'm not sure how to handle strings. Should I have a string concatanation operator?
+
+------------------------
+
 May 13th
 Same mini goal. Need to actually work on it rather than getting caught up with distractions. 
 For the frontend framework, I'm going to use React this time rather than vue based on my experience last time. 
