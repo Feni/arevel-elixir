@@ -1,3 +1,12 @@
+May 13th
+Same mini goal. Need to actually work on it rather than getting caught up with distractions. 
+For the frontend framework, I'm going to use React this time rather than vue based on my experience last time. 
+Yes, vue is great and I love it but react just has a significantly larger ecosystem and that is hard to ignore. 
+They're close enough on performance (file size, runtime) that it doesn't make sense to use the #2 based on personal taste. 
+I am also not going to bother with typescript this time. Just going to stick to pure javascript. 
+
+----------
+
 May 11th
 Current mini goal - Frontend UI for entering an expression. Backend for evaluating it. 
 
