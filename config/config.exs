@@ -15,7 +15,10 @@ config :arevel, ArevelWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "DqSWB2WiPqU8PT3fhWkiedv4J7fBQfjgMq+4zOpneSmnROtKObLA1sCqClsTUT1j",
   render_errors: [view: ArevelWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Arevel.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Arevel.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "j+AE0L6RX+89b5VJoEUy9c96t4m3jSd9"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -58,7 +58,9 @@ config :arevel, ArevelWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/arevel_web/{live,views}/.*(ex)$",
-      ~r"lib/arevel_web/templates/.*(eex)$"
+      ~r"lib/arevel_web/templates/.*(eex)$",
+
+      ~r{lib/arevel_web/live/.*(ex)$}
     ]
   ]
 

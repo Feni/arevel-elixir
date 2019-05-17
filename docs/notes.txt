@@ -1,3 +1,22 @@
+Starting implementing the cell in react, but switching to trying to do it in live view. 
+This is an experimental paradgrim but I think it has value for this kind of use-case where most actions
+are modifying data which would require a server call anyway. 
+--------------
+
+May 17th
+What do I call the primary structure in this?
+Cell? Expression? Block?
+
+Block is a section. 
+Cell is a unit. 
+So cell seems to be the better word.
+Try to remain similar to standard programming when possible.
+Don't make everything your own weird esoteric thing.
+
+Cell is the equivalent of an atom in something like lisp.
+
+----------
+
 Alright. I got expression evaluation working for math and some basic boolean. 
 I'm not sure how to handle strings. Should I have a string concatanation operator?
 
