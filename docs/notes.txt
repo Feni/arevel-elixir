@@ -1,6 +1,25 @@
+May 18, 2019
+Don't over optimize for what you have to deal with at scale. 
+Instead get the basics of the language down with what minimal things you need so you can ship and build some useful things off of this.
+
+I have a basic live server. 
+I think next up I need to convert the arevel code to the live server piece. 
+All of this is with the assumptiption that this will speed up my development pace because it's all backend. 
+No need to replicate any logic on the frontend. 
+
+-----------------
+
 Starting implementing the cell in react, but switching to trying to do it in live view. 
 This is an experimental paradgrim but I think it has value for this kind of use-case where most actions
 are modifying data which would require a server call anyway. 
+
+I'm pretty sure I can handle our Arevel users with live view and have a websocket for each concurrent user. No problem. 
+Where we run into limits is if we plan on providing this as a feature for the premium tier customers. 
+Their sites may have a lot more visitors and if we need to maintain connections in parallel for all of them... 
+Well its the same problem as discord right? They have all of these rooms where people idle and you need to send broadcast events. 
+They solved it with elixir. So it seems solvable. 
+And anyway I don't think I need to handle it all on one server. 
+I need to design this all in a way such that it can span servers.
 --------------
 
 May 17th
