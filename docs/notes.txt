@@ -1,3 +1,21 @@
+Phoenix live view vs react.
+React is more established, with better primitives and patterns. 
+Live view is experimental. The promise is the ability to just write backend code. 
+Do I care if the code is on the backend or the frontend? 
+Behavior difference is that it can support live data more easily. 
+What should I optimize for?
+Is there some benefit that live view would give me that I wouldn't/couldn't get otherwise?
+It maps to the domain model well because the server side is stateful. 
+Rather than the api request/response cycle which react would give me out of the box.
+I would then need to hack react to work with a websocket and a stateful system. 
+This configuration allows me to keep an editable running version of the code running on the backend 
+(which we previously decided execution should be on the backend so we can enable servers).
+It also allows classes of changes like a timer running which would update things. 
+Or long-running code that multiple people can observe while it's processing one massive file. 
+
+
+-------------------
+
 May 18, 2019
 Don't over optimize for what you have to deal with at scale. 
 Instead get the basics of the language down with what minimal things you need so you can ship and build some useful things off of this.
