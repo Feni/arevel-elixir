@@ -1,3 +1,25 @@
+May 19th
+That Simon Sinek talk on Youtube resonated with me. We need to align our messaging around Why. 
+The way we write software today is cumbersome and error prone. 
+There has to be a better way to program. We are not going to be programming like this, writing sequential instructions for CPUs to execute in text files with syntax and conventions that take years to learn and master. 
+There has to be a better way to build software. 
+Arevel is a next generation programming language in early beta. 
+It's a ground up rethinking of what programming can be in this day and age, without being encumbered by the design constraints of a different era that has limited traditional programming languages. 
+That's the why and the what. 
+I think it'll be good to publish an open plan of how we will do it. 
+
+We'll build a language that is easier to learn and adopt. By being a browser based system, it allows anyone to start coding in Arevel in minutes without needing to download, install and configure another language and toolchain. 
+Arevel is designed from the ground up as a general purpose language, but focused on the problem of developing rich websites. 
+We will build off of existing ecosystem. We will prioritize making it easy for anyone to publish libraries and collaborate. 
+This ecosystem and integrated environment will make it vastly more productive to develop software in Arevel than otherwise. 
+The health of the ecosystem depends on the community. The community will grow virally as users share what they built on Arevel and build forks off it. Building off of the backs of others work will ensure you can focus on the bits that are critical to. 
+This is already how we develop software today in this internet age. Collaboratively, building on each other's expertise. Except now it's supported wholly by the language. 
+This in turn creates a rich ecosystem, an active community and a first-class language all of which enrich each other. 
+This all leads to a rich network effect strengthening the language. 
+Arevel frees you from the mundane details to allow you to solve ever more complex problems than before. 
+
+-----------
+
 Phoenix live view vs react.
 React is more established, with better primitives and patterns. 
 Live view is experimental. The promise is the ability to just write backend code. 
