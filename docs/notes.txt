@@ -1,3 +1,13 @@
+May 20th
+I'm going back to the react approach and abandoning live view. 
+The whole advantage of live view is greater productivity with backend only code. 
+But it has far too much magic and hides away complexity and it's not mature enough to make it all configurable yet. 
+It's taking a risk that is un-necessary and isn't core to the product. 
+I should use the tried and true technology in this case. 
+
+
+------------------------------------
+
 May 19th
 That Simon Sinek talk on Youtube resonated with me. We need to align our messaging around Why. 
 The way we write software today is cumbersome and error prone. 
