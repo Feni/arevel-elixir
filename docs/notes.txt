@@ -1,3 +1,12 @@
+May 21st
+I still need to figure out mutations and side-effects. 
+I have to make the pragmatic choices beyond just building a pure, elegant system. 
+The choice should map closely to our mental model of the world and how things operate in the world. 
+That's muddied by the years of traditional programming. We come to think of that as normal, but it isn't.
+
+
+------------------------------------
+
 May 20th
 I'm going back to the react approach and abandoning live view. 
 The whole advantage of live view is greater productivity with backend only code. 
