@@ -1,3 +1,19 @@
+May 22nd
+Goal: Get the cell expression flow working with react.
+Remove all the live view code. 
+Could I use it for some pieces like signup verification? 
+Sure, but it's more overhead to maintain without necessarilly providing sufficient benefit.
+
+-----------
+
+Some of the ideas from immutable js, flux, elm architecture and react work well here. 
+They give a baseline for a good solution to handling change and state in a declarative, immutable world.
+I believe I can use it with this system as well. 
+In a sense then it becomes a UI interface to defining react style code for a lot more things than UI development. 
+
+
+------------------------------------
+
 May 21st
 I still need to figure out mutations and side-effects. 
 I have to make the pragmatic choices beyond just building a pure, elegant system. 
