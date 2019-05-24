@@ -9,6 +9,9 @@ names. dependency tree.
 Lists, functions.
 Tables.
 
+Whatever structures I have should be optimized for readability. 
+Not just looking good, but it fundamentally has to make sense at a glance what it is. 
+
 ---------------------
 
 So I got basic react cell evaluation working with react. 
