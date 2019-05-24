@@ -1,3 +1,34 @@
+May 23rd
+Things I need next: 
+Ability to add cells. 
+Propagate changes to server for persistance. 
+Connect to mongo.
+Easy reset button. 
+
+names. dependency tree.
+Lists, functions.
+Tables.
+
+---------------------
+
+So I got basic react cell evaluation working with react. 
+Kind of back to where things were. 
+TODO: remove live view. Not really urgent. 
+I think I'm at a point where it makes sense to start adding persistance. 
+Otherwise I will need to come up with a way to handle a lot of the modifications in code that would need to be changed later on anyway. 
+So instead I think it makes sense to add it in now. 
+Going with mongo. I think I did evaluate that vs postgres at at time. Postgres does have quite a lot of advantages and I will likely use it for our own user model, but the sharding capabilities of mongo make it fairly compelling. 
+
+mongod
+
+From https://scalegrid.io/blog/comparing-in-memory-databases-redis-vs-mongodb-percona-memory-engine/
+the latency is reasonable for my use-case. 
+And the incremental advantage of redis isn't worth the complexity at this low scale. 
+So skip having a cache layer for now and introduce it later into the system. 
+
+
+----------------
+
 May 22nd
 Goal: Get the cell expression flow working with react.
 Remove all the live view code. 
