@@ -1,3 +1,8 @@
+Stateful things are just declarative with some additional execution context like todo, doing, done. And certain kinds of things modify it so that it should be done again but otherwise it's one-off. 
+i.e. on live-preview execution it's not re-done, but on a "refresh" it's re-done.
+
+-------------
+
 May 25th
 As a paradgrim this makes sense, but as marketing it doesn't make sense to present it as "a better spreadsheet". Instead it should describe the problems it is solving for the user.
 
