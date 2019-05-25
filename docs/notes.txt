@@ -1,3 +1,10 @@
+Sketched out some ideas on paper. I think I have a clear new direction for the UI. 
+It even has a standard name. Masonry grid. That grounds me in the basis of Excel but gives 
+me the space to have more rich content within it as well. 
+
+
+----------
+
 The design and UX of this app is just as important, if not more important than the technical pieces. 
 This is a completely new paradgrim we're establishing. It has to make sense to people. They have to be able to learn what to do and how to do it. It has to be able to solve a lot of the common problems that come up with programming, namely debugging, performance, testing. 
 For web pages, there is a mental model of frontend and backend. 
