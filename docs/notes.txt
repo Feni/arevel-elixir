@@ -1,3 +1,8 @@
+So flexbox can't quite do what I want, but looks like css grids can. 
+It's not well supported but it works. The world will catch up. 
+
+----------
+
 Sketched out some ideas on paper. I think I have a clear new direction for the UI. 
 It even has a standard name. Masonry grid. That grounds me in the basis of Excel but gives 
 me the space to have more rich content within it as well. 
