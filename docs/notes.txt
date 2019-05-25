@@ -1,5 +1,9 @@
-With the spreadsheet model does a per-user pricing make sense or still an abstract sass unit in terms of server capacity or data volume and everything?
+May 25th
+As a paradgrim this makes sense, but as marketing it doesn't make sense to present it as "a better spreadsheet". Instead it should describe the problems it is solving for the user.
 
+--------------
+
+With the spreadsheet model does a per-user pricing make sense or still an abstract sass unit in terms of server capacity or data volume and everything?
 
 --------------
 
