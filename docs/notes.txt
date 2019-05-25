@@ -1,3 +1,51 @@
+The design and UX of this app is just as important, if not more important than the technical pieces. 
+This is a completely new paradgrim we're establishing. It has to make sense to people. They have to be able to learn what to do and how to do it. It has to be able to solve a lot of the common problems that come up with programming, namely debugging, performance, testing. 
+For web pages, there is a mental model of frontend and backend. 
+There are also classical systems of levels/layers in things like MVC. 
+I think a hierarchical tree is a common enough metaphore for this kind of organization. People are used to having that on the sidebar, but usually in the form of a file tree. 
+That can be our abstraction around modules and general code organization. 
+It would give you controls for adding functions, etc. 
+For the main code body, excel is the closest analogy. 
+Does the plain, pre-existing grid make sense? 
+Or would it make more sense to build it up incrementally line by line? 
+Mental model wise, with spreadsheet people have a mental model of how it behaves when you change a value. 
+What if it starts off like that, with a spreadsheet like interface except each cell is richer? 
+It's not just filled with numbers, but it has spots for defining a name inline and can display the expression as well as the result. 
+What if you could click into a cell and go deeper to define it? 
+One benefit of an excel like interface is that you maintain the context as you work. It doesn't just disappear. 
+With a grid we arrive again at one of the fundamental limitations of excel, which is that it's so unstructured. 
+Everything is completely isolated. There is no groups. 
+But what if that's an advantage? 
+You do start with isolated, indendent things and when you need to, you select it and define it as a group. That would turn it into an array that you can work with as a whole. 
+While each variable within it still has the full functionality level of a cell, so you can do things like call functions or give certain cells certain names. 
+The grid does make it easy to do certain things without worrying about adding or removing cells. No need for layout or organization. 
+
+
+-----------------
+
+brew services start postgresql
+
+-----------------
+
+May 24th
+So I've been thinking more about the question of the datastore. 
+So it absolutely makes sense to have a postgres instance for much of the core application data. Things like all of the users, the cells themselves and anything else with any kind of structure. 
+What is unclear is what to do with all of the user data. The data from their websites or from the files they upload. Data that isn't going to be structured, where maintaining schema migrations as they iterate won't be feasible. 
+So the options I see for that are:
+1: Continue using postgres. Pros: Simpler infrastructure management. Cons: Out of the box performance for json (Query time, memory, storage), weird-er update syntax. 
+2: Use mysql instead for everything. Similar to 1, except different json semantics. A big difference is mysql is better suited for updates than postgres, but you'd only hit this at scale.
+3: Use a separate mongo instance for user data. Pros: Better default tuning for json storage. Better case for sharding and scaling. Cons: Additional configuration and server management. Consistency, ecosystem, reliability. 
+4: Use separate sqllite instances for each application. 
+5: Use one of the elixir built in databases. Pros: Easy. Cons: Lack of tooling, backups, scaling. 
+
+For now I will go with the operational simplicity and stick to json in postgres. 
+With added indexes it should be efficient enough. 
+I will invest the time to learn the syntax, as I need to anyway for the sql portion of it. 
+It seems like the balanced choice here.
+
+
+----------------------
+
 May 23rd
 Things I need next: 
 Ability to add cells. 
