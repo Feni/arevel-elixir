@@ -1,3 +1,29 @@
+With the spreadsheet model does a per-user pricing make sense or still an abstract sass unit in terms of server capacity or data volume and everything?
+
+
+--------------
+
+Is a fluid UI a good thing or bad? Does it mean that when you view it on a different device, everything is in a different place and it no longer seems right? 
+
+--------------
+
+I am getting that feeling of non-ending stream of ideas that come from hitting on a nerve. A gold mine. This feels right. This unlocks so many possibilities. 
+Imagine being able to go into Arevel, drop in a csv file in a cell, then view the contents of that as a table in another cell, do all kinds of split, filtering and sorting and then be able to generate 2 or 3 files in other cells in different formats and you just click it to download it. Simple. And so freaking powerful. To do that right now would require so much manual process. Even these basic capabilities will make this exceed the limitations of excel. Excel has that core notion of a grid but so much functionality stuck outside of it in the UI layer, like sorting, or importing or exporting. This brings everything into the system so it's at your fingertips to do with as you need. 
+
+-----------
+So this can work. I think I am onto something here. 
+This makes me think, what if instead of presenting this as the next generation programming language with the simplicity of spreadsheets, intead I present it as the next generation spreadsheet with the power of programming? 
+Then it's not saying, oh this is a simpler watered down version of programming made to look like spreadsheets. Instead it's saying, this is a much more advanced more powerful spreadsheet, with the power of programming. 
+Look, you can even make it build websites! 
+And that gets a "wow" rather than if you phrase it as a language, then its like, ofcourse it can, and it does that worse than other languages. 
+There are also a whole lot more people familiar with spreadsheets and comfortable with it than there are people who use programming, so when they see the message it will resonate and build off of existing experiences and have some baseline expectations rather than starting with the unknown of programming. 
+Yes. This is interesting. It flips the approach of the product around completely. This is so much more compelling. 
+This also greatly alleviates the concerns around it being web based or closed source or any of those kinds of things. 
+That simply doesn't enter the picture. 
+It also clarifies the questino of what do you do with this thing, what do you use it for, because a spreadsheet has a purpose and people are used to using it for all kinds of things, whereas a language is so vague and starts from scratch that you don't often turn to it as a solution unless absolutely necessary. It doesn't occupy the space in your mind as a common tool. 
+
+
+---------------
 So flexbox can't quite do what I want, but looks like css grids can. 
 It's not well supported but it works. The world will catch up. 
 
