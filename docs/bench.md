@@ -1,3 +1,343 @@
+go gin with jsoniter
+
+➜  arevel git:(master) ✗ artillery quick --count 100 -n 100 http://localhost:8080/_health
+Started phase 0, duration: 2s @ 23:11:33(-0500) 2019-05-25
+Report @ 23:11:38(-0500) 2019-05-25
+Elapsed time: 5 seconds
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1964.64
+  Request latency:
+    min: 0.2
+    max: 71.4
+    median: 13.8
+    p95: 19
+    p99: 24
+  Codes:
+    404: 10000
+
+All virtual users finished
+Summary report @ 23:11:38(-0500) 2019-05-25
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1945.53
+  Request latency:
+    min: 0.2
+    max: 71.4
+    median: 13.8
+    p95: 19
+    p99: 24
+  Scenario counts:
+    0: 100 (100%)
+  Codes:
+    404: 10000
+
+➜  arevel git:(master) ✗ curl http://localhost:8080/_health
+{"Status":"OK"}
+
+
+
+go gin
+largely about the same
+
+Started phase 0, duration: 2s @ 23:08:29(-0500) 2019-05-25
+Report @ 23:08:34(-0500) 2019-05-25
+Elapsed time: 5 seconds
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1972.39
+  Request latency:
+    min: 0.3
+    max: 70.3
+    median: 14.8
+    p95: 19.1
+    p99: 24.8
+  Codes:
+    404: 10000
+
+All virtual users finished
+Summary report @ 23:08:34(-0500) 2019-05-25
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1953.13
+  Request latency:
+    min: 0.3
+    max: 70.3
+    median: 14.8
+    p95: 19.1
+    p99: 24.8
+  Scenario counts:
+    0: 100 (100%)
+  Codes:
+    404: 10000
+
+
+elixir
+Started phase 0, duration: 2s @ 23:02:29(-0500) 2019-05-25
+Report @ 23:02:34(-0500) 2019-05-25
+Elapsed time: 5 seconds
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1976.28
+  Request latency:
+    min: 0.3
+    max: 69.2
+    median: 14.9
+    p95: 19.8
+    p99: 25.3
+  Codes:
+    200: 10000
+
+All virtual users finished
+Summary report @ 23:02:34(-0500) 2019-05-25
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1960.78
+  Request latency:
+    min: 0.3
+    max: 69.2
+    median: 14.9
+    p95: 19.8
+    p99: 25.3
+  Scenario counts:
+    0: 100 (100%)
+  Codes:
+    200: 10000
+
+
+go
+
+Started phase 0, duration: 2s @ 23:01:42(-0500) 2019-05-25
+Report @ 23:01:47(-0500) 2019-05-25
+Elapsed time: 5 seconds
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1960.78
+  Request latency:
+    min: 0.2
+    max: 69.8
+    median: 15.1
+    p95: 20.3
+    p99: 33.2
+  Codes:
+    404: 10000
+
+All virtual users finished
+Summary report @ 23:01:48(-0500) 2019-05-25
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1941.75
+  Request latency:
+    min: 0.2
+    max: 69.8
+    median: 15.1
+    p95: 20.3
+    p99: 33.2
+  Scenario counts:
+    0: 100 (100%)
+  Codes:
+    404: 10000
+
+
+
+Go again
+
+artillery quick --count 100 -n 100 http://localhost:8080/_health
+Started phase 0, duration: 2s @ 22:56:59(-0500) 2019-05-25
+Report @ 22:57:04(-0500) 2019-05-25
+Elapsed time: 5 seconds
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1968.5
+  Request latency:
+    min: 0.2
+    max: 69.7
+    median: 14.9
+    p95: 19.6
+    p99: 23.4
+  Codes:
+    404: 10000
+
+All virtual users finished
+Summary report @ 22:57:04(-0500) 2019-05-25
+  Scenarios launched:  100
+  Scenarios completed: 100
+  Requests completed:  10000
+  RPS sent: 1949.32
+  Request latency:
+    min: 0.2
+    max: 69.7
+    median: 14.9
+    p95: 19.6
+    p99: 23.4
+  Scenario counts:
+    0: 100 (100%)
+  Codes:
+    404: 10000
+
+
+
+-----------
+
+May 25 with elixir
+
+➜  hello artillery quick --count 10000 -n 20 http://localhost:4000/_health
+Started phase 0, duration: 200s @ 22:44:09(-0500) 2019-05-25
+Report @ 22:44:19(-0500) 2019-05-25
+Elapsed time: 10 seconds
+  Scenarios launched:  499
+  Scenarios completed: 392
+  Requests completed:  7859
+  RPS sent: 799
+  Request latency:
+    min: 0.6
+    max: 58.8
+    median: 5.8
+    p95: 14.3
+    p99: 21.8
+  Codes:
+    200: 3788
+    500: 4071
+  Errors:
+    ECONNRESET: 107
+
+Warning: 
+CPU usage of Artillery seems to be very high (pids: 35903)
+which may severely affect its performance.
+See https://artillery.io/docs/faq/#high-cpu-warnings for details.
+
+Report @ 22:44:29(-0500) 2019-05-25
+Elapsed time: 20 seconds
+  Scenarios launched:  500
+  Scenarios completed: 392
+  Requests completed:  7840
+  RPS sent: 797.19
+  Request latency:
+    min: 0.6
+    max: 5.8
+    median: 0.8
+    p95: 1.8
+    p99: 2.7
+  Codes:
+    500: 7840
+  Errors:
+    ECONNRESET: 108
+
+Report @ 22:44:39(-0500) 2019-05-25
+Elapsed time: 30 seconds
+  Scenarios launched:  500
+  Scenarios completed: 392
+  Requests completed:  7840
+  RPS sent: 796.39
+  Request latency:
+    min: 0.6
+    max: 6.9
+    median: 0.9
+    p95: 1.9
+    p99: 2.9
+  Codes:
+    500: 7840
+  Errors:
+    ECONNRESET: 108
+
+Warning: High CPU usage warning (pids: 35903).
+See https://artillery.io/docs/faq/#high-cpu-warnings for details.
+
+Report @ 22:44:49(-0500) 2019-05-25
+Elapsed time: 40 seconds
+  Scenarios launched:  500
+  Scenarios completed: 392
+  Requests completed:  7840
+  RPS sent: 795.6
+  Request latency:
+    min: 0.6
+    max: 4.9
+    median: 0.8
+    p95: 1.7
+    p99: 2.6
+  Codes:
+    500: 7840
+  Errors:
+    ECONNRESET: 108
+
+
+------------------
+
+Basic go server
+
+atillery quick --count 10000 -n 20 http://localhost:8080/_health
+
+Started phase 0, duration: 200s @ 22:53:30(-0500) 2019-05-25
+Report @ 22:53:40(-0500) 2019-05-25
+Elapsed time: 10 seconds
+  Scenarios launched:  499
+  Scenarios completed: 247
+  Requests completed:  4975
+  RPS sent: 524.8
+  Request latency:
+    min: 0.1
+    max: 4290.3
+    median: 0.2
+    p95: 1.6
+    p99: 3
+  Codes:
+    404: 4940
+    500: 35
+  Errors:
+    ECONNRESET: 9
+    EPIPE: 1
+
+Warning: 
+CPU usage of Artillery seems to be very high (pids: 36749)
+which may severely affect its performance.
+See https://artillery.io/docs/faq/#high-cpu-warnings for details.
+
+Report @ 22:53:50(-0500) 2019-05-25
+Elapsed time: 20 seconds
+  Scenarios launched:  500
+  Scenarios completed: 0
+  Requests completed:  18
+  RPS sent: 52.01
+  Request latency:
+    min: 4806.9
+    max: 13774.6
+    median: 9275
+    p95: 13564.3
+    p99: 13774.6
+  Codes:
+    500: 18
+  Errors:
+    ECONNRESET: 19
+    EPIPE: 2
+
+Report @ 22:54:00(-0500) 2019-05-25
+Elapsed time: 30 seconds
+  Scenarios launched:  500
+  Scenarios completed: 0
+  Requests completed:  18
+  RPS sent: 51.85
+  Request latency:
+    min: 14296.2
+    max: 23214.8
+    median: 18765
+    p95: 23004.6
+    p99: 23214.8
+  Codes:
+    500: 18
+  Errors:
+    ECONNRESET: 21
+    EPIPE: 3
+
+
 
 ------
 Woot. Works now. I think. Needed to ssh in and verify why it wasn't running - seemed to be just cloudsql path, which kinda sucks that its a startup error. 

@@ -1,3 +1,20 @@
+In go, you don't really need a framework, but gin seems like the way to go. 
+I will need to figure out how to manage the codebase switchover.
+---------------------------
+Go. I know... I know... This again. 
+But reading about it a bit more, my reasoning for choosing elixir was flawed. It's based on the assumption that it has a more fair scheduler. But that's not necessarilly true, it turns out. Go also supports the same with go procs, yielding the work when calling functions or if you call a particular function if you want easy reduction counting. 
+So in practice, it can be just as fair. 
+As I saw with my own benchmarks before, the performance numbers in elixir aren't all its cracked up to be. It's great, much better than python, but not the millions of requests per second on commodity hardware that blog posts lead you to believe. 
+The development environment is first class with auto-watch and loading that is instant. The built in test infrastructure is great. I love the productivity of it all. 
+But the ecosystem isn't there yet. And so much of this feels so esoteric. It's hard to find documentation for most things. I don't feel that much more productive working on the backend, with a lot of things being non-obvious. Maybe it would lead to a better system in the long-run being purely functional, but it'the tradeoffs are significant. 
+Go offers good-enough concurrency, fast enough execution, a richer ecosystem (with even some packages for WASM execution, which is significant), better deployment and operational characteristics. 
+Since I churned on live-view, I am not loosing that much. I haven't implemented much of the complex bits of the backend either. 
+I will also be able to use app engine again for this, giving me the benefit of a managed server scaling, with nicities like serving statics as well as potentially lower costs. 
+I thought about most of this while sitting at prayer today. I think this is the right call. It doesn't make sense to risk the business on a risky, new technology. Especially when there's an alternative with all the benefits and none of the downsides.
+Ok. I'm going to switch. 
+I feel a little sad saying goodbye to Elixir. It was a fun little side-project, but now it's time to get serious. Similar to my choice with react, this is about being pragmatic.
+--------------
+
 Next up: 
 Parsing of expressions. 
 Need to make the additional width and height useful as well. 
