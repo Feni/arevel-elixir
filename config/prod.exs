@@ -20,14 +20,6 @@ config :arevel, ArevelWeb.Endpoint,
 #    compress: true,
     protocol_options: [max_keepalive: 5_000_000]
   ],
-  https: [
-    :inet6,
-    port: 9081,
-    cipher_suite: :strong,
-    keyfile: System.get_env("SOME_APP_SSL_KEY_PATH") || "priv/cert/selfsigned_key.pem",
-    certfile: System.get_env("SOME_APP_SSL_CERT_PATH") || "priv/cert/selfsigned.pem",
-    compress: true
-  ],
   url: [host: "arevel.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
