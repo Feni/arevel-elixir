@@ -71,7 +71,8 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure your database
 config :arevel, Arevel.Repo,
   username: "postgres",
-  password: "",
+  password: "postgres",
   database: "arevel_dev",
   hostname: "localhost",
+  port: 5433,
   pool_size: 10
